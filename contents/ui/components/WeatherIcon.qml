@@ -87,6 +87,7 @@ Item {
 
     /** The icon source: KDE icon name, SVG file URL, or wi-font glyph char */
     property string iconSource: _infoSource
+    readonly property bool stereoCondition: iconType === "kde" && iconSource.startsWith("weather-")
 
     /** Pixel size for the icon */
     property int iconSize: 22
@@ -213,7 +214,7 @@ Item {
             if (weatherIcon.iconType === "svg")
                 return weatherIcon._bundledIsFile ? svgComp : iconComp;
             if (weatherIcon.iconType === "kde") {
-                if (weatherIcon.svgFallback.length > 0 && weatherIcon._bundledIsFile && IconResolver.isKdeIconMissing(weatherIcon.iconSource))
+                if (!weatherIcon.stereoCondition && weatherIcon.svgFallback.length > 0 && weatherIcon._bundledIsFile && IconResolver.isKdeIconMissing(weatherIcon.iconSource))
                     return svgComp;
                 return iconComp;
             }
@@ -304,6 +305,9 @@ Item {
         Kirigami.Icon {
             id: primaryIcon
             source: weatherIcon.iconSource
+            weatherTheme: weatherIcon.stereoCondition
+            weatherHovered: weatherPointer.hovered
+            HoverHandler { id: weatherPointer; enabled: weatherIcon.stereoCondition }
             isMask: weatherIcon.isMask
             color: weatherIcon.isMask ? weatherIcon.iconColor : "transparent"
             fallback: weatherIcon.iconType === "kde" ? (weatherIcon.svgFallback.length > 0 ? "" : (weatherIcon.isMask ? "dialog-question-symbolic" : "dialog-question")) : "unknown"

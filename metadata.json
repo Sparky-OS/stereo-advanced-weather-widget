@@ -1,27 +1,31 @@
 {
   "KPackageStructure": "Plasma/Applet",
   "KPlugin": {
-    "Id": "org.kde.plasma.advanced-weather-widget",
-    "Name": "Advanced Weather Widget",
+    "Id": "org.kde.plasma.stereo-advanced-weather-widget",
+    "Name": "Stereo Advanced Weather Widget",
     "Name[bg]": "Разширен уиджет за времето",
-    "Name[de]":"Advanced Weather Widget",
+    "Name[de]":"Erweitertes Stereo-Wetter-Miniprogramm",
     "Name[nl]": "Uitgebreide weerwidget",
-    "Name[pt_BR]":"Advanced Weather Widget",
+    "Name[pt_BR]":"Widget avançado de clima estéreo",
     "Name[ru]": "Расширенный виджет погоды",
-    "Name[fr_FR]": "Widget météo avancé",
+    "Name[fr_FR]": "Widget météo avancé stéréo",
     "Name[tr_TR]": "Gelişmiş Hava Durumu Widget'ı",
-    "Name[es]": "Widget de Clima Avanzado",
-    "Name[zh_TW]": "進階天氣小工具",
-    "Name[zh_CN]": "高级天气小组件",
+    "Name[es]": "Widget avanzado de tiempo estéreo",
+    "Name[zh_TW]": "進階立體天氣小工具",
+    "Name[zh_CN]": "高级立体天气小组件",
     "Name[cs_CZ]": "Pokročilý widget počasí",
     "Name[it_IT]": "Widget meteo avanzato",
     "Name[hu_HU]": "Fejlett időjárás widget",
     "Name[pl_PL]": "Zaawansowany widget pogodowy",
     "Name[uk_UA]": "Розширений віджет погоди",
-    "Name[ja_JP]": "高度な天気ウィジェット",
-    "Name[ko_KR]": "고급 날씨 위젯",
+    "Name[ja_JP]": "高度なステレオ天気ウィジェット",
+    "Name[ko_KR]": "고급 스테레오 날씨 위젯",
     "Name[sv_SE]": "Avancerad väderwidget",
 
+    "Name[fr]": "Widget météo avancé stéréo",
+    "Name[pl]": "Zaawansowany stereofoniczny widżet pogodowy",
+    "Name[ja]": "高度なステレオ天気ウィジェット",
+    "Name[ko]": "고급 스테레오 날씨 위젯",
     "Description": "A modern, highly customizable weather widget built specifically for KDE Plasma 6",
     "Description[bg]": "Модерен и силно персонализируем уиджет за времето, създаден специално за KDE Plasma 6",
     "Description[de]": "Ein modernes, hochgradig anpassbares Wetter-Widget, das speziell für KDE Plasma 6 entwickelt wurde",
@@ -48,15 +52,15 @@
 
     "Authors": [
       {
-        "Name": "Petar Nedyalkov",
-        "Email": "petar.nedyalkov91@gmail.com",
+        "Name": "Stereo Advanced Weather Widget",
+
         "Role": "Author, design, development and Bulgarian translation"
       }
     ],
 
     "Version": "1.9.0",
-    "Website": "https://github.com/pnedyalkov91/advanced-weather-widget",
-    "BugReportUrl": "https://github.com/pnedyalkov91/advanced-weather-widget/issues"
+    "Website": "https://github.com/Sparky-OS/stereo-advanced-weather-widget",
+    "BugReportUrl": "https://github.com/Sparky-OS/stereo-advanced-weather-widget/issues"
   },
 
   "X-Plasma-API-Minimum-Version": "6.0",
