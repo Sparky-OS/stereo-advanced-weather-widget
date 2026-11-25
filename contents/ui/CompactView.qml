@@ -65,6 +65,13 @@ import "components"
 
 PlasmaCore.ToolTipArea {
     id: compactRoot
+
+    component PanelWeatherIcon: Kirigami.Icon {
+        id: icon
+        weatherTheme: visible && /^weather-[a-z0-9-]+$/.test(String(source))
+        weatherHovered: pointer.hovered
+        HoverHandler { id: pointer; enabled: icon.weatherTheme }
+    }
     // Inactive while the full view is open: this also cancels a pending
     // show timer, so a quick hover-then-click does not pop the tooltip
     // over the freshly opened popup.
@@ -657,7 +664,7 @@ PlasmaCore.ToolTipArea {
                 Layout.preferredHeight: iconSz
                 Layout.alignment: Qt.AlignVCenter
                 // Symbolic: KDE icon with -symbolic suffix (same as simple mode)
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent.iconSz
                     height: parent.iconSz
                     anchors.centerIn: parent
@@ -666,7 +673,7 @@ PlasmaCore.ToolTipArea {
                     smooth: true
                 }
                 // Colorful / custom
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent.iconSz
                     height: parent.iconSz
                     anchors.centerIn: parent
@@ -747,7 +754,7 @@ PlasmaCore.ToolTipArea {
                 Layout.preferredWidth: compactRoot.mlVertIconSz
                 Layout.preferredHeight: compactRoot.mlVertIconSz
                 Layout.alignment: Qt.AlignHCenter
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent.width
                     height: parent.height
                     anchors.centerIn: parent
@@ -755,7 +762,7 @@ PlasmaCore.ToolTipArea {
                     source: (compactRoot.weatherRoot && !compactRoot._lost) ? W.weatherCodeToIcon(compactRoot.weatherRoot.weatherCode, compactRoot.weatherRoot.isNightTime(), true) : "weather-none-available-symbolic"
                     smooth: true
                 }
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent.width
                     height: parent.height
                     anchors.centerIn: parent
@@ -995,7 +1002,7 @@ PlasmaCore.ToolTipArea {
                 // the colourful one. This is the standard Plasma convention -
                 // the KDE weather widget changelog states:
                 // "Ask for -symbolic versions everywhere we want monochrome icons."
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     id: iconGlyph
                     width: compactRoot.simpleSymbolicIconSz
                     height: compactRoot.simpleSymbolicIconSz
@@ -1007,7 +1014,7 @@ PlasmaCore.ToolTipArea {
                 // Colorful / custom icon: explicit size + centerIn, same as symbolic.
                 // anchors.fill was constrained to the post-margin cell (~32 px on a
                 // 48 px panel); explicit size uses _cellSz selected by the current mode.
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent._cellSz
                     height: parent._cellSz
                     anchors.centerIn: parent
@@ -1099,7 +1106,7 @@ PlasmaCore.ToolTipArea {
                 anchors.centerIn: parent
 
                 // Symbolic icon - KDE theme icon with -symbolic suffix
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     id: compressedIconGlyph
                     width: parent.width
                     height: parent.height
@@ -1109,7 +1116,7 @@ PlasmaCore.ToolTipArea {
                     smooth: true
                 }
                 // Colorful / custom icon
-                Kirigami.Icon {
+                PanelWeatherIcon {
                     width: parent.width
                     height: parent.height
                     anchors.centerIn: parent
